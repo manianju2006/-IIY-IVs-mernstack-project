@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu Preview | Quick Byte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="preview">
+
+<header class="topbar">
+  <div class="brand">Quick Byte Preview</div>
+  <nav class="top-links">
+    <a href="adminpanel.html">Back to Admin</a>
+  </nav>
+</header>
+
+<main class="page-shell content-layout">
+  <section class="section-head section-head-rich">
+    <div>
+      <p class="eyebrow">Preview Mode</p>
+      <h1>Customer menu preview</h1>
+      <p class="section-copy">This page shows how the menu currently looks without sending you through the normal user flow.</p>
+    </div>
+    <div class="canteen-stats">
+      <div class="stat-chip" id="canteenSummary">0 canteens ready to serve</div>
+      <div class="stat-chip">Admin preview only</div>
+    </div>
+  </section>
+
+  <section id="canteenGrid" class="canteen-showcase"></section>
+  <div id="menuArea"></div>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

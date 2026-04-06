@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login | Quick Byte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin-login">
+
+<header class="topbar">
+  <div class="brand">Quick Byte Admin</div>
+  <nav class="top-links">
+    <a href="index.html">Student Login</a>
+  </nav>
+</header>
+
+<main class="page-shell center-layout">
+  <section class="auth-card">
+    <p class="eyebrow">Control Room</p>
+    <h2>Admin access</h2>
+    <p class="section-copy">Manage foods, order deadlines, and incoming activity from one place.</p>
+
+    <label class="input-label" for="adminuser">Admin Username</label>
+    <input type="text" id="adminuser" placeholder="Enter admin username">
+
+    <label class="input-label" for="adminpass">Password</label>
+    <input type="password" id="adminpass" placeholder="Enter password">
+
+    <button class="primary-button" onclick="adminLogin()">Login</button>
+    <p class="helper-text">Default admin credentials remain in the current project setup.</p>
+  </section>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

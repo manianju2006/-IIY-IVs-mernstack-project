@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Byte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="login">
+
+<header class="topbar">
+  <div class="brand">Quick Byte</div>
+  <nav class="top-links">
+    <a href="register.html">Register</a>
+    <a href="adminlogin.html">Admin</a>
+  </nav>
+</header>
+
+<main class="page-shell hero-layout">
+  <section class="hero-copy hero-premium">
+    <div class="hero-orbit hero-orbit-one"></div>
+    <div class="hero-orbit hero-orbit-two"></div>
+    <p class="eyebrow">Campus Food, Reimagined</p>
+    <h1>Order faster, skip the chaos, and make every break feel planned.</h1>
+    <p class="lead">Quick Byte turns scattered canteen orders into one polished food flow with smarter browsing, cleaner checkout, and a sharper admin dashboard.</p>
+    <div class="hero-pills">
+      <span id="heroGreeting">Welcome back</span>
+      <span id="heroDeadline">No deadline announced yet</span>
+      <span>3 canteens in one flow</span>
+    </div>
+    <div class="hero-highlight-grid">
+      <article class="hero-highlight-card">
+        <strong>Fast discovery</strong>
+        <p>Search dishes, compare canteens, and build your cart without hopping between pages.</p>
+      </article>
+      <article class="hero-highlight-card">
+        <strong>Cleaner ordering</strong>
+        <p>Cart, payment, account, and canteen browsing now feel like one connected product.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="auth-card">
+    <p class="eyebrow">Login</p>
+    <h2>Pick up where you left off</h2>
+    <p class="section-copy">Use the account you created to explore menus and place your next order.</p>
+
+    <label class="input-label" for="email">Email</label>
+    <input type="email" id="email" placeholder="name@college.edu">
+
+    <label class="input-label" for="password">Password</label>
+    <div class="password-container">
+      <input type="password" id="password" placeholder="Enter your password">
+      <i class="fa-solid fa-eye" id="eyeIcon" onclick="togglePassword()"></i>
+    </div>
+
+    <button class="primary-button" onclick="login()">Login</button>
+
+    <p class="helper-text">New here? <a href="register.html">Create an account</a></p>
+  </section>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

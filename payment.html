@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment | Quick Byte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="payment">
+
+<header class="topbar">
+  <div class="brand">Quick Byte</div>
+  <nav class="top-links">
+    <a href="cart.html">Back to Cart</a>
+    <a href="canteens.html">Menu</a>
+  </nav>
+</header>
+
+<main class="page-shell content-layout">
+  <section class="section-head">
+    <div>
+      <p class="eyebrow">Checkout</p>
+      <h1>Choose how you want to pay.</h1>
+      <p class="section-copy">Complete your order with the method that fits you best.</p>
+    </div>
+    <div class="payment-summary">
+      <span>Total: <strong id="paymentTotal">Rs. 0</strong></span>
+      <span>Location: <strong id="paymentLocation">Campus pickup</strong></span>
+    </div>
+  </section>
+
+  <section class="payment-grid">
+    <button class="payment-button" data-payment-option="Cash on Delivery" onclick="selectPayment('Cash on Delivery')">Cash on Delivery</button>
+    <button class="payment-button" onclick="showUPI()">UPI Options</button>
+  </section>
+
+  <div id="upiOptions" class="payment-grid payment-subgrid" style="display:none;">
+    <button class="payment-button" data-payment-option="PhonePe" onclick="selectPayment('PhonePe')">PhonePe</button>
+    <button class="payment-button" data-payment-option="Google Pay" onclick="selectPayment('Google Pay')">Google Pay</button>
+    <button class="payment-button" data-payment-option="Paytm" onclick="selectPayment('Paytm')">Paytm</button>
+  </div>
+
+  <section class="checkout-panel">
+    <h2>Selected method</h2>
+    <p class="section-copy">Current choice: <strong id="chosenMethod">None selected</strong></p>
+    <button class="primary-button" onclick="placeOrder()">Place Order</button>
+    <p id="msg" class="success-message"></p>
+  </section>
+</main>
+
+<nav class="bottom-nav">
+  <a href="canteens.html">Menu</a>
+  <a href="cart.html">Cart</a>
+  <a href="account.html">Account</a>
+</nav>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

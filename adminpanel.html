@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel | Quick Byte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin">
+
+<header class="topbar">
+  <div class="brand">Quick Byte Admin</div>
+  <nav class="top-links" aria-label="Admin navigation">
+    <button type="button" class="inline-button" onclick="openAdminUsersPage()">Open Users</button>
+    <button type="button" class="inline-button" onclick="openAdminOrdersPage()">Open Orders</button>
+    <button type="button" class="inline-button" id="previewToggleButton" onclick="openAdminPreviewPage()">Open Preview</button>
+    <button type="button" class="inline-button" onclick="logoutAdmin()">Logout</button>
+  </nav>
+</header>
+
+<main class="page-shell content-layout">
+  <section class="section-head admin-hero">
+    <div>
+      <p class="eyebrow">Dashboard</p>
+      <h1>Run the campus food flow from one panel.</h1>
+      <p class="section-copy">Add specials, set order deadlines, and watch new orders arrive in a cleaner admin view.</p>
+    </div>
+    <div class="admin-hero-badges">
+      <span class="stat-chip">Live menu control</span>
+      <span class="stat-chip">Realtime order overview</span>
+    </div>
+  </section>
+
+  <section class="dashboard-grid">
+    <article class="metric-card metric-card-featured">
+      <span>Custom Foods</span>
+      <strong id="foodCount">0</strong>
+      <p>Menu items you have added beyond the default canteen lineup.</p>
+    </article>
+    <article class="metric-card">
+      <span>Orders</span>
+      <strong id="totalOrders">0 orders received</strong>
+      <p>Keep track of current order momentum across the canteens.</p>
+    </article>
+    <article class="metric-card">
+      <span>Total Revenue</span>
+      <strong id="revenueValue">Rs. 0</strong>
+      <p>Snapshot of total order value currently recorded in the system.</p>
+    </article>
+    <article class="metric-card">
+      <span>Top Item</span>
+      <strong id="topItemValue">No item yet</strong>
+      <p>The most frequently ordered item based on saved order history.</p>
+    </article>
+    <article class="metric-card">
+      <span>Backend Status</span>
+      <strong id="backendStatus">Checking...</strong>
+      <p>Whether the app is reading from live backend data or local cache.</p>
+    </article>
+    <article class="metric-card">
+      <span>Best Stocked Canteen</span>
+      <strong id="bestCanteen">No data yet</strong>
+      <p>The canteen currently holding the strongest variety on the menu.</p>
+    </article>
+  </section>
+
+  <section class="admin-grid">
+    <article class="checkout-panel">
+      <p class="eyebrow">Food Management</p>
+      <h2 id="foodFormTitle">Add a new menu item</h2>
+      <div class="input-stack">
+        <label class="input-label" for="foodcanteen">Canteen</label>
+        <select id="foodcanteen" onchange="updateFoodPreview()">
+          <option value="pencil">Pencil Canteen</option>
+          <option value="aparna">Aparna Canteen</option>
+          <option value="ball">Ball Canteen</option>
+        </select>
+        <label class="input-label" for="foodcategory">Category</label>
+        <input type="text" id="foodcategory" placeholder="Category, for example Rice or Snacks" oninput="updateFoodPreview(); queueFoodImageSuggestion()">
+        <label class="input-label" for="foodname">Food name</label>
+        <input type="text" id="foodname" placeholder="Food name" oninput="updateFoodPreview(); queueFoodImageSuggestion()">
+        <label class="input-label" for="foodimage">Image (optional)</label>
+        <input type="text" id="foodimage" placeholder="Optional image file name or URL, for example burger.jpg" oninput="updateFoodPreview(); queueFoodImageSuggestion()">
+        <label class="input-label" for="foodprice">Price</label>
+        <input type="number" id="foodprice" placeholder="Price" oninput="updateFoodPreview()">
+        <p class="field-note">Leave the image field blank and Quick Byte will search the web for a relevant dish image automatically, or use an existing image like `biryani.jpg`, `burger.jpg`, `friedrice.jpg`.</p>
+        <p class="field-note" id="foodSuggestionStatus">Type a dish name to fetch an image automatically.</p>
+        <div id="foodImageCandidates" class="stack-list"></div>
+        <div class="food-preview-wrap">
+          <p class="field-note">Image preview before saving</p>
+          <article class="menu-card food-preview-card">
+            <img id="foodPreviewImage" src="watermark5.jpg" alt="Food preview">
+            <div class="menu-card-content">
+              <span class="menu-badge" id="foodPreviewCategory">Chef Pick</span>
+              <h3 id="foodPreviewName">New Food Item</h3>
+              <p id="foodPreviewPrice">Rs. 0</p>
+            </div>
+          </article>
+        </div>
+        <div class="top-links">
+          <button class="primary-button" id="foodSubmitButton" onclick="addFood()">Add Food</button>
+          <button class="ghost-button" id="foodCancelButton" onclick="resetFoodForm()" hidden>Cancel Edit</button>
+        </div>
+      </div>
+      <div id="foodList" class="stack-list"></div>
+    </article>
+
+    <div class="admin-side-stack">
+      <article class="checkout-panel deadline-card">
+        <p class="eyebrow">Lunch Deadline</p>
+        <h2>Set the cut-off time</h2>
+        <div class="deadline-controls">
+          <div class="deadline-field">
+            <label class="input-label" for="deadlineHour">Hours</label>
+            <select id="deadlineHour"></select>
+          </div>
+          <div class="deadline-field">
+            <label class="input-label" for="deadlineMinute">Minutes</label>
+            <select id="deadlineMinute"></select>
+          </div>
+          <button type="button" class="primary-button" onclick="setDeadline()">Set Deadline</button>
+        </div>
+        <p id="showDeadline" class="deadline-status">No deadline set</p>
+      </article>
+
+      <article class="checkout-panel utility-card">
+        <p class="eyebrow">Service Snapshot</p>
+        <h2>Keep this canteen ready</h2>
+        <div class="utility-stack">
+          <div class="utility-row">
+            <span>Menu items live</span>
+            <strong id="sideFoodCount">0</strong>
+          </div>
+          <div class="utility-row">
+            <span>Top ordered item</span>
+            <strong id="sideTopItem">No item yet</strong>
+          </div>
+          <div class="utility-row">
+            <span>Best stocked canteen</span>
+            <strong id="sideBestCanteen">No data yet</strong>
+          </div>
+        </div>
+        <p class="field-note">Use this space to quickly sanity-check what students will actually see before you open the preview.</p>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

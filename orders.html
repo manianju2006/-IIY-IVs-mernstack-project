@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orders | Quick Byte Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin-orders">
+
+<header class="topbar">
+  <div class="brand">Quick Byte Orders</div>
+  <nav class="top-links">
+    <a href="adminpanel.html">Back to Admin</a>
+    <button class="inline-button" onclick="logoutAdmin()">Logout</button>
+  </nav>
+</header>
+
+<main class="page-shell content-layout">
+  <section class="section-head section-head-rich">
+    <div>
+      <p class="eyebrow">Orders</p>
+      <h1>Track incoming campus orders</h1>
+      <p class="section-copy">See the newest orders first, then scan the complete order history with reviews and customer details.</p>
+    </div>
+    <div class="canteen-stats">
+      <div class="stat-chip" id="ordersPageSummary">0 orders received</div>
+      <div class="stat-chip" id="ordersPageRevenue">Rs. 0 total</div>
+    </div>
+  </section>
+
+  <section class="dashboard-grid">
+    <article class="checkout-panel">
+      <p class="eyebrow">Recent Orders</p>
+      <h2>Newest incoming orders</h2>
+      <div id="recentOrdersList" class="stack-list"></div>
+    </article>
+    <article class="checkout-panel">
+      <p class="eyebrow">All Orders</p>
+      <h2>Full order activity</h2>
+      <div id="ordersList" class="stack-list"></div>
+    </article>
+  </section>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

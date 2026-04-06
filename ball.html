@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ball Canteen | Quick Byte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="legacy-menu">
+
+<header class="topbar">
+  <div class="brand">Quick Byte</div>
+  <nav class="top-links">
+    <a href="canteens.html">Back to Canteens</a>
+    <a href="cart.html">Cart <span id="cartCount" class="count-pill">0</span></a>
+    <a href="account.html">Account</a>
+  </nav>
+</header>
+
+<main class="page-shell content-layout">
+  <section class="menu-panel">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Ball Canteen</p>
+        <h1>Heavier meals for hungrier breaks.</h1>
+        <p class="section-copy">This legacy page has been refreshed to stay consistent with the upgraded project.</p>
+      </div>
+      <a class="ghost-button" href="canteens.html">Open Main Menu</a>
+    </div>
+
+    <div class="menu-grid">
+      <article class="menu-card">
+        <img src="biryani.jpg" alt="Chicken Biryani">
+        <div class="menu-card-content">
+          <h3>Chicken Biryani</h3>
+          <p>Rs. 150</p>
+          <button onclick="addCart('Chicken Biryani',150)">Add to Cart</button>
+        </div>
+      </article>
+      <article class="menu-card">
+        <img src="friedrice.jpg" alt="Veg Fried Rice">
+        <div class="menu-card-content">
+          <h3>Veg Fried Rice</h3>
+          <p>Rs. 85</p>
+          <button onclick="addCart('Veg Fried Rice',85)">Add to Cart</button>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<nav class="bottom-nav">
+  <a href="canteens.html">Menu</a>
+  <a href="cart.html">Cart</a>
+  <a href="account.html">Account</a>
+</nav>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

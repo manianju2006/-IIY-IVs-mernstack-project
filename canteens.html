@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canteens | Quick Byte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="canteens">
+
+<header class="topbar">
+  <div class="brand">Quick Byte</div>
+  <nav class="top-links">
+    <a href="cart.html">Cart <span id="cartCount" class="count-pill">0</span></a>
+    <a href="account.html">Account</a>
+  </nav>
+</header>
+
+<main class="page-shell content-layout">
+  <section class="section-head section-head-rich">
+    <div>
+      <p class="eyebrow">Explore</p>
+      <h1>Order from campus favorites without the mess.</h1>
+      <p class="section-copy">Browse canteens, compare quick picks, and add dishes from a menu that feels more like a real food app.</p>
+    </div>
+    <div class="canteen-stats">
+      <div class="stat-chip" id="canteenSummary">0 canteens ready to serve</div>
+      <div class="stat-chip">Fresh picks updated live</div>
+    </div>
+  </section>
+
+  <section id="canteenGrid" class="canteen-showcase"></section>
+  <div id="menuArea"></div>
+</main>
+
+<nav class="bottom-nav">
+  <a href="canteens.html">Menu</a>
+  <a href="cart.html">Cart</a>
+  <a href="account.html">Account</a>
+</nav>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

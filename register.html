@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account | Quick Byte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="register">
+
+<header class="topbar">
+  <div class="brand">Quick Byte</div>
+  <nav class="top-links">
+    <a href="index.html">Login</a>
+    <a href="adminlogin.html">Admin</a>
+  </nav>
+</header>
+
+<main class="page-shell hero-layout">
+  <section class="hero-copy">
+    <p class="eyebrow">Quick Setup</p>
+    <h1>Create a student account in less than a minute.</h1>
+    <p class="lead">Save your profile once and use it for every future order, checkout, and update.</p>
+  </section>
+
+  <section class="auth-card">
+    <p class="eyebrow">Register</p>
+    <h2>Start your Quick Byte profile</h2>
+    <p class="section-copy">We keep it simple so you can get to food faster.</p>
+
+    <label class="input-label" for="regemail">Email</label>
+    <input type="email" id="regemail" placeholder="name@college.edu">
+
+    <label class="input-label" for="regpass">Password</label>
+    <input type="password" id="regpass" placeholder="Choose a password">
+
+    <button class="primary-button" onclick="register()">Create Account</button>
+    <p class="helper-text">Already have an account? <a href="index.html">Log in</a></p>
+  </section>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

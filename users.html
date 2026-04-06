@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Users | Quick Byte Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin-users">
+
+<header class="topbar">
+  <div class="brand">Quick Byte Users</div>
+  <nav class="top-links">
+    <a href="adminpanel.html">Back to Admin</a>
+    <button class="inline-button" onclick="logoutAdmin()">Logout</button>
+  </nav>
+</header>
+
+<main class="page-shell content-layout">
+  <section class="section-head section-head-rich">
+    <div>
+      <p class="eyebrow">Users</p>
+      <h1>Manage student accounts</h1>
+      <p class="section-copy">Review who is using the app, how active each account is, and remove users when needed.</p>
+    </div>
+    <div class="canteen-stats">
+      <div class="stat-chip" id="usersPageSummary">0 users</div>
+      <div class="stat-chip" id="usersPageOrders">0 total orders</div>
+    </div>
+  </section>
+
+  <section class="dashboard-grid">
+    <article class="metric-card metric-card-featured">
+      <span>Total Users</span>
+      <strong id="usersCountValue">0</strong>
+      <p>All registered student accounts currently in Quick Byte.</p>
+    </article>
+    <article class="metric-card">
+      <span>Active Ordering Users</span>
+      <strong id="activeUsersValue">0</strong>
+      <p>Users who have placed at least one order.</p>
+    </article>
+    <article class="metric-card">
+      <span>Total User Spend</span>
+      <strong id="usersSpendValue">Rs. 0</strong>
+      <p>Combined spend across every registered account.</p>
+    </article>
+  </section>
+
+  <section class="checkout-panel">
+    <p class="eyebrow">User Directory</p>
+    <h2>Registered accounts</h2>
+    <div id="usersList" class="stack-list"></div>
+  </section>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

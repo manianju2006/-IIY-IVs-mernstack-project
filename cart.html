@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart | Quick Byte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="cart">
+
+<header class="topbar">
+  <div class="brand">Quick Byte</div>
+  <nav class="top-links">
+    <a href="canteens.html">Browse Menu</a>
+    <a href="account.html">Account</a>
+  </nav>
+</header>
+
+<main class="page-shell content-layout">
+  <section class="section-head">
+    <div>
+      <p class="eyebrow">Cart</p>
+      <h1>Your order, almost ready.</h1>
+      <p id="cartSummary" class="section-copy">Your cart is waiting for something delicious.</p>
+    </div>
+    <div class="total-box">
+      <span>Total</span>
+      <strong id="total">Rs. 0</strong>
+    </div>
+  </section>
+
+  <div id="emptyCart" class="empty-card" hidden>
+    Your cart is empty. Head back to the menu and add a few campus favorites.
+  </div>
+
+  <div id="cartItems" class="stack-list"></div>
+
+  <section class="checkout-panel">
+    <div>
+      <p class="eyebrow">Delivery</p>
+      <h2>Select your location</h2>
+      <p class="section-copy">We use this during checkout so the canteen knows where to send your order.</p>
+    </div>
+
+    <select id="place" class="big-box">
+      <option value="">Select your place</option>
+      <option>Ratan Tata Bhavan</option>
+      <option>KL Rao Bhavan</option>
+      <option>Bill Gates Bhavan</option>
+      <option>Vishweswaraya Bhavan</option>
+      <option>Bhaskar Bhavan</option>
+      <option>C.V. Raman Bhavan</option>
+      <option>Ramanujan Bhavan</option>
+      <option>Edison Bhavan</option>
+      <option>School of Business</option>
+      <option>T-Hub</option>
+      <option>Abdul Kalam Bhavan</option>
+    </select>
+
+    <button class="primary-button" onclick="goToPayment()">Proceed to Payment</button>
+  </section>
+</main>
+
+<nav class="bottom-nav">
+  <a href="canteens.html">Menu</a>
+  <a href="cart.html">Cart</a>
+  <a href="account.html">Account</a>
+</nav>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

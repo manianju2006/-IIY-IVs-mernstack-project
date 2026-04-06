@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account | Quick Byte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="account">
+
+<header class="topbar">
+  <div class="brand">Quick Byte</div>
+  <nav class="top-links">
+    <a href="canteens.html">Menu</a>
+    <a href="cart.html">Cart</a>
+    <button class="inline-button" onclick="logoutUser()">Logout</button>
+  </nav>
+</header>
+
+<main class="page-shell content-layout">
+  <section class="section-head section-head-rich">
+    <div>
+      <p class="eyebrow">Account</p>
+      <h1 id="accountGreeting">Welcome</h1>
+      <p class="section-copy">Manage your saved details, track your latest campus orders, and leave feedback that helps improve the menu.</p>
+    </div>
+    <div class="canteen-stats">
+      <div class="stat-chip" id="accountStatusChip">No live orders yet</div>
+      <div class="stat-chip" id="accountReviewChip">Reviews ready when you are</div>
+    </div>
+  </section>
+
+  <section class="dashboard-grid account-metrics">
+    <article class="metric-card metric-card-featured">
+      <span>Total Orders</span>
+      <strong id="accountOrders">0</strong>
+      <p>Every saved order tied to your Quick Byte account.</p>
+    </article>
+    <article class="metric-card">
+      <span>Saved Delivery Location</span>
+      <strong id="accountPlace">No delivery location selected yet</strong>
+      <p>Used to speed up checkout the next time you order.</p>
+    </article>
+    <article class="metric-card">
+      <span>Total Spend</span>
+      <strong id="accountSpend">Rs. 0</strong>
+      <p>Your running spend across all saved campus orders.</p>
+    </article>
+    <article class="metric-card">
+      <span>Reviewed Orders</span>
+      <strong id="accountReviewed">0</strong>
+      <p>Share what was worth repeating and what needs work.</p>
+    </article>
+  </section>
+
+  <section class="account-highlight-grid" aria-label="Account insights">
+    <article class="feature-card account-highlight-card">
+      <p class="eyebrow">Favorite Item</p>
+      <h3 id="accountFavoriteItem">Nothing ordered yet</h3>
+      <p id="accountFavoriteItemNote">Your most repeated dish will appear here once orders start coming in.</p>
+    </article>
+    <article class="feature-card account-highlight-card">
+      <p class="eyebrow">Last Order</p>
+      <h3 id="accountLastOrder">No recent order yet</h3>
+      <p id="accountLastOrderNote">Your latest order update will show here.</p>
+    </article>
+    <article class="feature-card account-highlight-card">
+      <p class="eyebrow">Pending Reviews</p>
+      <h3 id="accountPendingReviews">0</h3>
+      <p id="accountPendingReviewsNote">Accepted orders waiting for your feedback.</p>
+    </article>
+  </section>
+
+  <section class="account-layout">
+    <article class="checkout-panel account-profile-card">
+      <p class="eyebrow">Profile</p>
+      <h2>Edit your details</h2>
+      <p class="section-copy">Keep your delivery details current and update your password only when you actually want to change it.</p>
+
+      <form id="accountProfileForm" class="account-profile-form">
+        <label class="input-label" for="accountEmail">Email</label>
+        <input type="email" id="accountEmail" placeholder="Enter your email" autocomplete="email">
+
+        <label class="input-label" for="accountPassword">Password</label>
+        <input type="password" id="accountPassword" placeholder="Leave blank to keep your current password" autocomplete="new-password">
+
+        <label class="input-label" for="accountLocation">Delivery Location</label>
+        <select id="accountLocation" autocomplete="street-address">
+          <option value="">Select your place</option>
+          <option>Ratan Tata Bhavan</option>
+          <option>KL Rao Bhavan</option>
+          <option>Bill Gates Bhavan</option>
+          <option>Vishweswaraya Bhavan</option>
+          <option>Bhaskar Bhavan</option>
+          <option>C.V. Raman Bhavan</option>
+          <option>Ramanujan Bhavan</option>
+          <option>Edison Bhavan</option>
+          <option>School of Business</option>
+          <option>T-Hub</option>
+          <option>Abdul Kalam Bhavan</option>
+        </select>
+
+        <p class="field-note account-profile-note">Your delivery location is saved for faster checkout on this device.</p>
+        <div class="account-profile-actions">
+          <button id="accountSaveButton" type="submit" class="primary-button">Save Profile</button>
+        </div>
+      </form>
+    </article>
+
+    <article class="checkout-panel account-orders-card">
+      <div class="preview-head">
+        <div>
+          <p class="eyebrow">Recent Orders</p>
+          <h2>Your latest activity</h2>
+          <p class="section-copy">Review any accepted order directly from here.</p>
+        </div>
+      </div>
+      <div id="recentOrders" class="stack-list" aria-live="polite"></div>
+    </article>
+  </section>
+</main>
+
+<nav class="bottom-nav">
+  <a href="canteens.html">Menu</a>
+  <a href="cart.html">Cart</a>
+  <a href="account.html" aria-current="page">Account</a>
+</nav>
+
+<div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
