@@ -1,0 +1,6 @@
+backend/node_modules/
+backend/.env
+npm-debug.log*
+node_modules/
+playwright-report/
+test-results/

@@ -1,0 +1,9 @@
+{
+  "name": "quick-byte-workspace",
+  "private": true,
+  "scripts": {
+    "install:backend": "npm --prefix backend install",
+    "start": "npm --prefix backend start",
+    "dev": "npm --prefix backend run dev"
+  }
+}
